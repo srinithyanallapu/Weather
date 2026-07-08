@@ -16,16 +16,16 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-    displaydata(result.main.temp);
+    displaydata(result.main.temp,city);
 	// console.log("Temperature in " + city + ": " + result.main.temp);
 } catch (error) {
 	console.error(error);
 }
     
 }
-function displaydata(city){
-    let temp=document.getElementById("resultdata");
-    temp.innerHTML = `<h3>Temperature in ${city}<h3>`;
+function displaydata(temp,city){
+    let tempElement=document.getElementById("resultdata");
+    tempElement.innerHTML = `<h3>Temperature in ${city}: ${temp}°C</h3>`;
     // temp.innerHTML = `Temperature: ${city}`;
 
 }
